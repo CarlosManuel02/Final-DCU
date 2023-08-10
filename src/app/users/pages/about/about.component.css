@@ -1,0 +1,39 @@
+/* Estilos para la sección "Sobre Nosotros" */
+.about {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.about-content {
+  margin-bottom: 30px;
+}
+
+.about-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.about-image-container {
+  text-align: center;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}

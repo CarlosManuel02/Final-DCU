@@ -1,0 +1,84 @@
+<!-- Search User Section -->
+<div class="container mt-4">
+  <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+    <h2 class="text-primary text-center">Buscar Usuario por ID</h2>
+    <form (ngSubmit)="searchUser()">
+      <label for="userId" class="font-weight-bold">ID de Usuario:</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="userId" [(ngModel)]="userId" name="userId" required>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Buscar</button>
+          <button type="button" (click)="clear()" class="btn btn-secondary">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- List of Users -->
+<div class="container mt-4" *ngIf="!userFound">
+  <h3 class="text-center mb-4 text-primary">Lista de Usuarios</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address }}</td>
+        <button
+          type="button"
+          class="btn btn-text-primary btn-sm"
+          (click)="selectUser(user.id)">
+          Seleccionar
+        </button>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- User Details Section -->
+<div class="container mt-4" *ngIf="userFound">
+  <h3 class="text-center mb-4 text-primary">Detalles del Usuario</h3>
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="list-group">
+            <li class="list-group-item bg-primary text-white"><strong>ID:</strong></li>
+            <li class="list-group-item bg-light"><strong>Nombre:</strong></li>
+            <li class="list-group-item bg-light"><strong>Apellido:</strong></li>
+            <li class="list-group-item bg-light"><strong>Email:</strong></li>
+            <li class="list-group-item bg-light"><strong>Teléfono:</strong></li>
+            <li class="list-group-item bg-light"><strong>Dirección:</strong></li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <ul class="list-group">
+            <li class="list-group-item bg-primary text-white">{{ user.id }}</li>
+            <li class="list-group-item">{{ user.name }}</li>
+            <li class="list-group-item">{{ user.lastName }}</li>
+            <li class="list-group-item">{{ user.email }}</li>
+            <li class="list-group-item">{{ user.phone }}</li>
+            <li class="list-group-item">{{ user.address }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

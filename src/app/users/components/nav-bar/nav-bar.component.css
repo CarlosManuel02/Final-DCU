@@ -1,0 +1,92 @@
+.navbar-brand {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform: translateX(-2px) translateY(-2px);
+}
+
+.navbar-brand:hover span {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2px, -2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* Estilos para el navbar */
+.navbar {
+  background-color: #343a40;
+  padding: 1rem 0;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* Efecto de onda para el enlace de la marca */
+.wave-effect {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.wave-effect:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wave-effect:hover:before {
+  transform: scale(5);
+}
+
+
+
+/* Ajustes responsivos para los enlaces */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    margin-right: 0;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 0;
+  }
+}
