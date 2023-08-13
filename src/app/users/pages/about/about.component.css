@@ -1,4 +1,8 @@
-/* Estilos para la sección "Sobre Nosotros" */
+
+section{
+  height: 89vh;
+}
+
 .about {
   padding: 80px 0;
   background-color: #f8f9fa;
